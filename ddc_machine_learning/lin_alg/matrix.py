@@ -1,6 +1,5 @@
 import csv
 
-
 class Matrix():
     """
     Class for matrix operations.
