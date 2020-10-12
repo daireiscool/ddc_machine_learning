@@ -63,6 +63,14 @@ class PCA():
             
         ::param matrix: (list[list])
         """
+        _, columns = size(matrix)
+        
+        assert self.n_components < columns, \
+            """
+            The number of Principle Components wanted is more than the number of columns.
+            Please change n_components of the class.
+            """
+
         matrix_pca = []
         for i in range(self.n_components):
             matrix_pca.append([col[0] for col in multiply(matrix, transpose([self.eigenvectors[i]]))])
