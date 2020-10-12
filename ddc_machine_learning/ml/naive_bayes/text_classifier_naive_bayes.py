@@ -1,4 +1,4 @@
-class Text_Naive_Bayes():
+class TextNaiveBayes():
     """
     Class for Naive Bayes operations of text data.
 
