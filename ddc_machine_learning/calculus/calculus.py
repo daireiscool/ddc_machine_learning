@@ -1,7 +1,3 @@
-"""
-Inputted polynomials are dictionaries.
-"""
-
 def differentiate(polynomial):
     """
     Function to differentiate a polynomial.

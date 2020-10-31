@@ -1,5 +1,3 @@
-import csv
-
 class Matrix():
     """
     Class for matrix operations.
@@ -221,37 +219,3 @@ class Matrix():
         assert (columns, rows) == MatrixNew.size(), \
             """Error in code, the transposed matrix is of the wrong dimensions."""
         return MatrixNew
-
-    def save(self, location):
-        """
-        Saves a Matrix to storage as csv.
-        To run 
-            --Matrix.save(location)
-            
-        ::param location: (string) path and location of file to save
-
-        """
-        with open(location, "w", newline='') as file:
-            writer = csv.writer(file)
-            for row in self.matrix:
-                writer.writerow(row)
-            file.close()
-        print(f"Saved to {location}.")
-            
-    def load(self, location):
-        """
-        Load a Matrix from a csv file.
-        Replaces the matrix with the loaded data.
-        To run create an empty Matrix, and load the data to overwrite the empty Matrix.
-        To run 
-            M = Matrix()
-            M.load("test.csv")
-            
-        ::param location: (string) path and location of file to load
-
-        """
-        with open(location, "r", newline='') as file:
-            matrix_new = list(csv.reader(file, quoting=csv.QUOTE_NONNUMERIC))
-            file.close()
-        print(f"Loaded matrix with dimension: {self.size()}")
-        self.matrix = matrix_new
