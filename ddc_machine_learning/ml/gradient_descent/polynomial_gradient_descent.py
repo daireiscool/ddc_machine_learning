@@ -91,12 +91,7 @@ class Polynomial_GD():
         ::param y_values: (list[float]) 
         ::return: (float)    
         """
-        def f_mse(x, y):
-            return (self.f(x, coeffs) - y)**2
-
-        loss = np.array([f_mse(x_values[xi], y_values[xi]) for xi in range(len(x_values))])
-        return sum(loss)*(1/len(x_values))
-
+        return np.mean(pow(f(x_values, coeffs) - y_values, 2))
 
     def gradient_calculation(self, coefficients, x_values, y_values):
         """
