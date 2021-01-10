@@ -91,7 +91,7 @@ class Polynomial_GD():
         ::param y_values: (list[float]) 
         ::return: (float)    
         """
-        return np.mean(pow(f(x_values, coeffs) - y_values, 2))
+        return np.mean(pow(self.f(x_values, coeffs) - y_values, 2))
 
     def gradient_calculation(self, coefficients, x_values, y_values):
         """
